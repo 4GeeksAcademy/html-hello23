@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 700px; /* Aumenté el ancho máximo del contenedor */
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px; /* Aumenté el padding */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 25px; /* Aumenté el margen inferior */
+            font-size: 24px;
+        }
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px; /* Aumenté el padding */
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            margin-bottom: 25px; /* Aumenté el margen inferior */
+        }
+        .form-group {
+            display: flex;
+            margin-bottom: 20px; /* Aumenté el margen inferior */
+            justify-content: space-between;
+        }
+        .form-group label {
+            width: 100%;
+            margin-right: 15px; /* Aumenté el margen derecho */
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px; /* Aumenté el padding */
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        .form-group .half-width {
+            width: 48%;
+        }
+        .form-group .third-width {
+            width: 32%;
+        }
+        .payment-icons {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px; /* Aumenté el margen inferior */
+        }
+        .payment-icons span {
+            margin-right: 10px;
+        }
+        .payment-icons svg {
+            width: 50px; /* Aumenté el tamaño de los íconos */
+            height: 30px;
+            margin-right: 15px; /* Aumenté el margen derecho */
+        }
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 30px; /* Aumenté el margen superior */
+        }
+        .form-actions button {
+            padding: 12px 25px; /* Aumenté el padding */
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .btn-cancel {
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+        .btn-send {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Payment form example</h2>
+    <div class="error-message">Some fields are missing</div>
+    <form>
+        <!-- Card, CVC, and Amount in one row -->
+        <div class="form-group">
+            <label for="card" class="third-width">Card #</label>
+            <label for="cvc" class="third-width">CVC #</label>
+            <label for="amount" class="third-width">Amount</label>
+        </div>
+        <div class="form-group">
+            <input type="text" id="card" name="card" placeholder="XXXXXXXXXXXXXXXX" class="third-width">
+            <input type="text" id="cvc" name="cvc" placeholder="0000" class="third-width">
+            <input type="text" id="amount" name="amount" placeholder="$ Amount" class="third-width">
+        </div>
+
+        <!-- First Name and Last Name in one row -->
+        <div class="form-group">
+            <label for="first-name" class="half-width">First Name</label>
+            <label for="last-name" class="half-width">Last Name</label>
+        </div>
+        <div class="form-group">
+            <input type="text" id="first-name" name="first-name" class="half-width">
+            <input type="text" id="last-name" name="last-name" class="half-width">
+        </div>
+
+        <!-- City, State, and Postal Code in one row -->
+        <div class="form-group">
+            <label for="city" class="third-width">City</label>
+            <label for="state" class="third-width">State</label>
+            <label for="postal-code" class="third-width">Postal Code</label>
+        </div>
+        <div class="form-group">
+            <input type="text" id="city" name="city" class="third-width">
+            <select id="state" name="state" class="third-width">
+                <option>Pick a state</option>
+                <option>State 1</option>
+                <option>State 2</option>
+                <option>State 3</option>
+            </select>
+            <input type="text" id="postal-code" name="postal-code" class="third-width">
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+            <label for="message">Message</label>
+            <input type="text" id="message" name="message" placeholder="Add any notes here.">
+        </div>
+
+        <!-- Payment Icons -->
+        <div class="payment-icons">
+            <span>We accept:</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M0 12h48v24H0V12z" fill="#fff"/><path d="M20 30.6L28.4 24 20 17.4zM31.6 30.6L24 24l7.6-6.6zM10 17.4l-7.6 7.6L10 30.6z" fill="#000"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#002A5C"/><rect x="14" y="17" width="20" height="14" fill="#FFF"/><rect x="16" y="19" width="16" height="10" fill="#002A5C"/><path d="M28 19v10l8-5z" fill="#FFF"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M8 16h32v16H8z" fill="#EB001B"/><path d="M24 16c-5 0-10 4-10 8s5 8 10 8c5 0 10-4 10-8s-5-8-10-8z" fill="#F79E1B"/><path d="M24 28c-2.7 0-5-2.3-5-4s2.3-4 5-4c2.7 0 5 2.3 5 4s-2.3 4-5 4z" fill="#FF5F00"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#F5F7F8"/><path d="M24 30c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z" fill="#0057E7"/><circle cx="24" cy="24" r="3" fill="#FF5F00"/></svg>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-actions">
+            <button type="button" class="btn-cancel">Cancel</button>
+            <button type="submit" class="btn-send">Send</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
